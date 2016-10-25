@@ -1,12 +1,48 @@
 PODS:
   - Alamofire (4.0.1)
+  - DGElasticPullToRefresh (1.1)
+  - Kingfisher (3.1.4)
+  - Moya (8.0.0-beta.2):
+    - Moya/Core (= 8.0.0-beta.2)
+  - Moya/Core (8.0.0-beta.2):
+    - Alamofire (~> 4.0.0)
+    - Result
+  - NVActivityIndicatorView (3.0)
+  - ObjectMapper (2.2.0)
+  - RAMAnimatedTabBarController (2.0.2)
+  - ReachabilitySwift (3)
+  - Result (3.0.0)
+  - SnapKit (3.0.2)
+  - SwiftyJSON (3.1.1)
+  - SwiftyUserDefaults (3.0.0)
 
 DEPENDENCIES:
   - Alamofire (~> 4.0)
+  - DGElasticPullToRefresh
+  - Kingfisher (~> 3.0)
+  - Moya (= 8.0.0-beta.2)
+  - NVActivityIndicatorView
+  - ObjectMapper (~> 2.2)
+  - RAMAnimatedTabBarController (~> 2.0.2)
+  - ReachabilitySwift (~> 3)
+  - SnapKit (~> 3.0.2)
+  - SwiftyJSON
+  - SwiftyUserDefaults
 
 SPEC CHECKSUMS:
   Alamofire: 7682d43245de14874acd142ec137b144aa1dd335
+  DGElasticPullToRefresh: 28f11a6026302a90f8ffebbc6e24748e584dddd3
+  Kingfisher: 6c67e3e57f2d81a9cfdfa25052cd86f33ceac9bb
+  Moya: 920d40f738e6f4ece84010cec701bb9693be8251
+  NVActivityIndicatorView: 81953b5e65093ba79edf4fe7268e002039ca5268
+  ObjectMapper: 4060d739febae11ab0c6af8d786f98667c82e1bd
+  RAMAnimatedTabBarController: 8b4b7e41d1d6c76ebf6482233f4bc528231db437
+  ReachabilitySwift: f5b9bb30a0777fac8f09ce8b067e32faeb29bb64
+  Result: 1b3e431f37cbcd3ad89c6aa9ab0ae55515fae3b6
+  SnapKit: 2e456761aa92d4d4067a7a5594c18769d451a8ad
+  SwiftyJSON: f0be2e604f83e8405a624e9f891898bf6ed4e019
+  SwiftyUserDefaults: 0f1d45fc3aafb9064dac661e367f8f83fe21a4b4
 
-PODFILE CHECKSUM: 26ccfb588038b573e118e55f41ce42e38382f798
+PODFILE CHECKSUM: 7a7d6c8a25709c2d26bb0cd0fe2ee5d296d876fc
 
 COCOAPODS: 1.1.1

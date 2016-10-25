@@ -9,20 +9,16 @@
 /* Begin PBXBuildFile section */
 		4536949B6E7047B3AEC02D00 /* Pods_xiaorizi_Gl.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8B2ED85DA1D9115FD7968360 /* Pods_xiaorizi_Gl.framework */; };
 		87265D221DBA36CE0024FFB2 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 87265D211DBA36CE0024FFB2 /* AppDelegate.swift */; };
-		87265D241DBA36CE0024FFB2 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 87265D231DBA36CE0024FFB2 /* ViewController.swift */; };
-		87265D271DBA36CE0024FFB2 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 87265D251DBA36CE0024FFB2 /* Main.storyboard */; };
 		87265D291DBA36CE0024FFB2 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 87265D281DBA36CE0024FFB2 /* Assets.xcassets */; };
-		87265D2C1DBA36CE0024FFB2 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 87265D2A1DBA36CE0024FFB2 /* LaunchScreen.storyboard */; };
+		872B0BF71DBF017700F3C78A /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 872B0BF61DBF017700F3C78A /* MainViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		87265D1E1DBA36CE0024FFB2 /* xiaorizi-Gl.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "xiaorizi-Gl.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		87265D211DBA36CE0024FFB2 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		87265D231DBA36CE0024FFB2 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
-		87265D261DBA36CE0024FFB2 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		87265D281DBA36CE0024FFB2 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
-		87265D2B1DBA36CE0024FFB2 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		87265D2D1DBA36CE0024FFB2 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		872B0BF61DBF017700F3C78A /* MainViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
 		8B2ED85DA1D9115FD7968360 /* Pods_xiaorizi_Gl.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_xiaorizi_Gl.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		ADA4C295A0929C7CAABDC44B /* Pods-xiaorizi-Gl.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-xiaorizi-Gl.debug.xcconfig"; path = "Pods/Target Support Files/Pods-xiaorizi-Gl/Pods-xiaorizi-Gl.debug.xcconfig"; sourceTree = "<group>"; };
 		C0AEE024B6EA86037710FAC8 /* Pods-xiaorizi-Gl.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-xiaorizi-Gl.release.xcconfig"; path = "Pods/Target Support Files/Pods-xiaorizi-Gl/Pods-xiaorizi-Gl.release.xcconfig"; sourceTree = "<group>"; };
@@ -71,10 +67,8 @@
 			isa = PBXGroup;
 			children = (
 				87265D211DBA36CE0024FFB2 /* AppDelegate.swift */,
-				87265D231DBA36CE0024FFB2 /* ViewController.swift */,
-				87265D251DBA36CE0024FFB2 /* Main.storyboard */,
+				872B0BF61DBF017700F3C78A /* MainViewController.swift */,
 				87265D281DBA36CE0024FFB2 /* Assets.xcassets */,
-				87265D2A1DBA36CE0024FFB2 /* LaunchScreen.storyboard */,
 				87265D2D1DBA36CE0024FFB2 /* Info.plist */,
 			);
 			path = "xiaorizi-Gl";
@@ -151,9 +145,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				87265D2C1DBA36CE0024FFB2 /* LaunchScreen.storyboard in Resources */,
 				87265D291DBA36CE0024FFB2 /* Assets.xcassets in Resources */,
-				87265D271DBA36CE0024FFB2 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -212,31 +204,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				87265D241DBA36CE0024FFB2 /* ViewController.swift in Sources */,
 				87265D221DBA36CE0024FFB2 /* AppDelegate.swift in Sources */,
+				872B0BF71DBF017700F3C78A /* MainViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
-
-/* Begin PBXVariantGroup section */
-		87265D251DBA36CE0024FFB2 /* Main.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				87265D261DBA36CE0024FFB2 /* Base */,
-			);
-			name = Main.storyboard;
-			sourceTree = "<group>";
-		};
-		87265D2A1DBA36CE0024FFB2 /* LaunchScreen.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				87265D2B1DBA36CE0024FFB2 /* Base */,
-			);
-			name = LaunchScreen.storyboard;
-			sourceTree = "<group>";
-		};
-/* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
 		87265D2E1DBA36CE0024FFB2 /* Debug */ = {
@@ -337,6 +310,7 @@
 			baseConfigurationReference = ADA4C295A0929C7CAABDC44B /* Pods-xiaorizi-Gl.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				DEVELOPMENT_TEAM = 5PNX76B54G;
 				INFOPLIST_FILE = "xiaorizi-Gl/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
@@ -351,6 +325,7 @@
 			baseConfigurationReference = C0AEE024B6EA86037710FAC8 /* Pods-xiaorizi-Gl.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				DEVELOPMENT_TEAM = 5PNX76B54G;
 				INFOPLIST_FILE = "xiaorizi-Gl/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
