@@ -22,14 +22,19 @@ class MainViewController: UIViewController {
 
     func configMainView() {
         self.view.backgroundColor = UIColor.white
-        let leftItem = UIBarButtonItem.init(barButtonSystemItem: .add, target: self, action: #selector(leftAction))
-        self.navigationItem.leftBarButtonItem = leftItem
+        self.navigationItem.leftBarButtonItem = UIBarButtonItem.barButtonItemWithLeftIcon(icon: "near_2", "", self, #selector(MainViewController.leftAction))
+        self.navigationController?.navigationBar.backgroundColor = RGB(r: 28.0, g: 28.0, b: 28.0)
+        self.navigationController?.navigationBar.barTintColor = UIColor.black
+        UIApplication.shared.statusBarStyle = .lightContent
+    }
+
+    func leftAction() {
 
     }
 
-    func leftAction(sender: UIButton) {
-        print(sender)
-    }
+
+
+
     
 
 
