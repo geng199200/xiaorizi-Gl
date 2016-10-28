@@ -12,7 +12,8 @@ class MainViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        self.configMainView()
+        configMainView()
+        mainRequest()
     }
 
     override func didReceiveMemoryWarning() {
@@ -22,14 +23,30 @@ class MainViewController: UIViewController {
 
     func configMainView() {
         self.view.backgroundColor = UIColor.white
-        self.navigationItem.leftBarButtonItem = UIBarButtonItem.barButtonItemWithLeftIcon(icon: "near_2", "", self, #selector(MainViewController.leftAction))
         self.navigationController?.navigationBar.backgroundColor = RGB(r: 28.0, g: 28.0, b: 28.0)
         self.navigationController?.navigationBar.barTintColor = UIColor.black
         UIApplication.shared.statusBarStyle = .lightContent
-    }
+         self.navigationItem.leftBarButtonItem = UIBarButtonItem.barButtonItemWithLeftIcon(icon: "near_2", "", self, #selector(MainViewController.leftAction))
+        self.navigationItem.rightBarButtonItems = UIBarButtonItem.barButtonItemWithRightIcons(icon: "ta_2", "", self, #selector(MainViewController.peopleAction), "zdsearch", "", self, #selector(MainViewController.searchAction))
 
+    }
+    
     func leftAction() {
 
+    }
+
+    func searchAction() {
+
+    }
+
+    func peopleAction() {
+
+    }
+
+    // MARK: Request Data
+
+    func mainRequest() {
+        _ = mainProvider.request(MainAPI.life("volatile")) {result in
     }
 
 
