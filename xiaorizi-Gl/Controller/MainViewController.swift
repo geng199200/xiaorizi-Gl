@@ -46,8 +46,7 @@ class MainViewController: UIViewController {
     // MARK: Request Data
 
     func mainRequest() {
-        _ = mainProvider.request(MainAPI.i, completion: { result in
-
+        _ = mainProvider.request(.page(page: 1), completion: { result in
             switch result {
             case let .success(moyaResponse):
                 do {
@@ -60,10 +59,11 @@ class MainViewController: UIViewController {
                     
                 }
 
+            case let .failure(error):
+                print(error.response)
+                break
 
 
-
-            case .failure(_): break
             }
 
         })

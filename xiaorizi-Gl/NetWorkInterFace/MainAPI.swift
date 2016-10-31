@@ -26,6 +26,8 @@ private func JSONResponseDataFormatter(_ data: Data) -> Data {
 let mainProvider = MoyaProvider<MainAPI>()
 
 
+
+
 // MARK: - Provider support
 
 private extension String {
@@ -35,18 +37,18 @@ private extension String {
 }
 
 public enum MainAPI {
-    case life(String)
+    case page(page: Int)
     case i
 }
 
 extension MainAPI: TargetType {
     public var baseURL: URL {
-        return URL.init(string: "http://apiv2.xiaorizi.me/volatile/life/?app_token=EA196B4A7AB4A271&channel=iTunes&offset=30&page=1&token_time=1477383779&uuid=B2FDB824-8505-4AA4-A50C-B1A2A4A94D19&version=3.2.0")!
+        return URL.init(string: "http://apiv2.xiaorizi")!
     }
     public var path: String {
         switch self {
-        case .life(let name):
-            return "me/\(name.urlEscapedString)/life"
+        case .page(_):
+            return "me/volatile/life/?"
         default:
             return ""
         }
@@ -58,8 +60,9 @@ extension MainAPI: TargetType {
 
     public var parameters: [String: Any]? {
         switch self {
-        case .life(_):
-            return [:]
+        case .page(let page):
+            return ["app_token":app_token, "channel":channel, "offset":"30", "page": page, "token_time":token_time, "uuid":uuid, "version":version]
+
         default:
             return nil
        }
@@ -72,8 +75,8 @@ extension MainAPI: TargetType {
 
     public var sampleData: Data {
         switch self {
-        case .life(let name):
-            return "{\(name)}".data(using: String.Encoding.utf8)!
+        case .page(let page):
+            return "{\(page)}".data(using: String.Encoding.utf8)!
         default:
             return "".data(using: String.Encoding.utf8)!
         }
@@ -82,5 +85,9 @@ extension MainAPI: TargetType {
 
 public func url(route: TargetType) -> String {
     return route.baseURL.appendingPathComponent(route.path).absoluteString
+}
+
+let endpointClosure = { (target: MainAPI) -> Endpoint<MainAPI> in
+    return Endpoint<MainAPI>(URL: url(route: target), sampleResponseClosure: {.networkResponse(200, target.sampleData)}, method: target.method, parameters: target.parameters)
 }
 
