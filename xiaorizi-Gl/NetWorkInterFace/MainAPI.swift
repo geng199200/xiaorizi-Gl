@@ -41,7 +41,7 @@ public enum MainAPI {
 
 extension MainAPI: TargetType {
     public var baseURL: URL {
-        return URL.init(string: "http://apiv2.xiaorizi.")!
+        return URL.init(string: "http://apiv2.xiaorizi.me/volatile/life/?app_token=EA196B4A7AB4A271&channel=iTunes&offset=30&page=1&token_time=1477383779&uuid=B2FDB824-8505-4AA4-A50C-B1A2A4A94D19&version=3.2.0")!
     }
     public var path: String {
         switch self {

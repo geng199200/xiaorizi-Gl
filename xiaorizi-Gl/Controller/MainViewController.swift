@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import SwiftyJSON
 
 class MainViewController: UIViewController {
 
@@ -40,19 +41,34 @@ class MainViewController: UIViewController {
     }
 
     func peopleAction() {
-
     }
 
     // MARK: Request Data
 
     func mainRequest() {
-        _ = mainProvider.request(MainAPI.life("volatile")) {result in
+        _ = mainProvider.request(MainAPI.i, completion: { result in
+
+            switch result {
+            case let .success(moyaResponse):
+                do {
+                    let data = moyaResponse.data
+                    let firstJson = JSON(data:data)
+                    let seconJson = try moyaResponse.mapJSON()
+                    print(firstJson,seconJson)
+
+                } catch  {
+                    
+                }
+
+
+
+
+            case .failure(_): break
+            }
+
+        })
     }
 
-
-
-
-    
 
 
 
