@@ -14,9 +14,9 @@ class LifeListTableViewCell: UITableViewCell {
     var liftImageView: UIImageView {
         let imageView = UIImageView()
         imageView.contentMode = UIViewContentMode.scaleAspectFit
+        imageView.frame = CGRect.init(x: 0, y: 0, width: 50, height: 30)
         return imageView
     }
-
 
     override func awakeFromNib() {
         super.awakeFromNib()
@@ -36,11 +36,15 @@ class LifeListTableViewCell: UITableViewCell {
 
     func setup() {
         self.contentView.addSubview(liftImageView)
-        liftImageView.snp.makeConstraints { (make) in
-            make.left.equalTo(self.contentView.snp.left).offset(10)
-            make.centerY.equalTo(self.contentView.snp.centerY)
-            make.size.equalTo(CGSize.init(width: 65, height: 40))
-        }
+    }
+
+    func setData(_ item: ItemModel)  {
+        let url = URL(string: item.img!)!
+        liftImageView.kf.setImage(with: url,
+                              placeholder: nil,
+                              options: [.transition(.fade(1))],
+                              progressBlock: nil,
+                              completionHandler: nil)
     }
     
     required init?(coder aDecoder: NSCoder) {

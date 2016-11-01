@@ -11,8 +11,8 @@ import SwiftyJSON
 import SnapKit
 import ObjectMapper
 
-class MainViewController: UIViewController {
-     var repos = NSArray()
+class MainViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
+     var repos = [Any]()
     lazy var tableView = UITableView()
 
     override func viewDidLoad() {
@@ -41,25 +41,32 @@ class MainViewController: UIViewController {
     //MARK: init view
 
     func initSubviews() {
+        self.tableView.register(LifeListTableViewCell.self, forCellReuseIdentifier: "Cell")
         self.view.addSubview(self.tableView)
         self.tableView.snp.makeConstraints { (make) in
             make.edges.equalTo(self.view).inset(UIEdgeInsetsMake(0, 0, 0, 0))
         }
-//        self.tableView.delegate = self
-//        self.tableView.dataSource = self
+        self.tableView.delegate = self
+        self.tableView.dataSource = self
     }
 
     //MARK: UITableViewDataSource
 
-//     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-//        return repos.count
-//    }
+     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return repos.count
+    }
 
-//     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-//
-//    }
+     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        let cell = tableView.dequeueReusableCell(withIdentifier: "Cell")! as! LifeListTableViewCell
+        cell.setData(self.repos[indexPath.row] as! ItemModel)
+        return cell
+    }
 
     //MARK: UITableViewDelegate
+
+    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        return 110
+    }
 
     //MARK: LoadDta
 
@@ -69,12 +76,13 @@ class MainViewController: UIViewController {
             case let .success(moyaResponse):
                 do {
                     let json = try moyaResponse.mapJSON()
-                   let result = Mapper<LiftListModel>().map(JSON: json as! [String : Any])
-                    print(result)
+                   let result =  Mapper<LiftListModel>().map(JSON: json as! [String : Any])
+                   self.repos = (result?.list)!
 
                 } catch  {
 
                 }
+                self.tableView.reloadData()
 
             case let .failure(error):
                 print(error.response)
