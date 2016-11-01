@@ -33,7 +33,6 @@ class MainViewController: UIViewController {
     }
     
     func leftAction() {
-
     }
 
     func searchAction() {

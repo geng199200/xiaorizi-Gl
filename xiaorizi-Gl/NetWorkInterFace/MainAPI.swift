@@ -23,7 +23,7 @@ private func JSONResponseDataFormatter(_ data: Data) -> Data {
     }
 }
 
-let mainProvider = MoyaProvider<MainAPI>()
+let mainProvider = MoyaProvider<MainAPI>(plugins: [NetworkLoggerPlugin(verbose: true, responseDataFormatter: JSONResponseDataFormatter)])
 
 
 
@@ -43,12 +43,12 @@ public enum MainAPI {
 
 extension MainAPI: TargetType {
     public var baseURL: URL {
-        return URL.init(string: "http://apiv2.xiaorizi")!
+        return URL.init(string: "http://apiv2.xiaorizi.me")!
     }
     public var path: String {
         switch self {
         case .page(_):
-            return "me/volatile/life/?"
+            return "volatile/life/"
         default:
             return ""
         }
@@ -90,4 +90,7 @@ public func url(route: TargetType) -> String {
 let endpointClosure = { (target: MainAPI) -> Endpoint<MainAPI> in
     return Endpoint<MainAPI>(URL: url(route: target), sampleResponseClosure: {.networkResponse(200, target.sampleData)}, method: target.method, parameters: target.parameters)
 }
+
+
+
 
