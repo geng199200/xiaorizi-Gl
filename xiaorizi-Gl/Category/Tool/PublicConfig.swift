@@ -15,6 +15,11 @@ let token_time: Int = 1477383779
 let uuid: String = "B2FDB824-8505-4AA4-A50C-B1A2A4A94D19"
 let version = Bundle.main.infoDictionary!["CFBundleShortVersionString"] as! String
 
+//MARK: 获取屏幕的宽高
+
+public let screenBounds = UIScreen.main.bounds
+public let screenHeight = UIScreen.main.bounds.height
+public let screenWidth = UIScreen.main.bounds.width
 
 func RGB(r:CGFloat,g:CGFloat,b:CGFloat)->UIColor{
 

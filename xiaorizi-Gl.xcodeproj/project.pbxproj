@@ -8,23 +8,29 @@
 
 /* Begin PBXBuildFile section */
 		4536949B6E7047B3AEC02D00 /* Pods_xiaorizi_Gl.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8B2ED85DA1D9115FD7968360 /* Pods_xiaorizi_Gl.framework */; };
+		870A1DA51DC86D69007E25DD /* LifeListTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 870A1DA41DC86D69007E25DD /* LifeListTableViewCell.swift */; };
+		870A1DA91DC87CD5007E25DD /* LiftListModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 870A1DA81DC87CD5007E25DD /* LiftListModel.swift */; };
+		870A1DAB1DC881D1007E25DD /* ItemModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 870A1DAA1DC881D1007E25DD /* ItemModel.swift */; };
 		87265D221DBA36CE0024FFB2 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 87265D211DBA36CE0024FFB2 /* AppDelegate.swift */; };
 		87265D291DBA36CE0024FFB2 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 87265D281DBA36CE0024FFB2 /* Assets.xcassets */; };
-		872B0BFB1DBF43E500F3C78A /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 872B0BFA1DBF43E500F3C78A /* MainViewController.swift */; };
 		872B0BFE1DBF4BF600F3C78A /* PublicConfig.swift in Sources */ = {isa = PBXBuildFile; fileRef = 872B0BFD1DBF4BF600F3C78A /* PublicConfig.swift */; };
 		872B0C021DBF5BD500F3C78A /* UIBarButtonItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 872B0C011DBF5BD500F3C78A /* UIBarButtonItem.swift */; };
 		87A500861DC339EC0082044F /* MainAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 87A500851DC339EB0082044F /* MainAPI.swift */; };
+		87A5458E1DC843CA009AFD11 /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 87A5458D1DC843CA009AFD11 /* MainViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		870A1DA41DC86D69007E25DD /* LifeListTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LifeListTableViewCell.swift; sourceTree = "<group>"; };
+		870A1DA81DC87CD5007E25DD /* LiftListModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LiftListModel.swift; sourceTree = "<group>"; };
+		870A1DAA1DC881D1007E25DD /* ItemModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ItemModel.swift; sourceTree = "<group>"; };
 		87265D1E1DBA36CE0024FFB2 /* xiaorizi-Gl.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "xiaorizi-Gl.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		87265D211DBA36CE0024FFB2 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		87265D281DBA36CE0024FFB2 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		87265D2D1DBA36CE0024FFB2 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		872B0BFA1DBF43E500F3C78A /* MainViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
 		872B0BFD1DBF4BF600F3C78A /* PublicConfig.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PublicConfig.swift; sourceTree = "<group>"; };
 		872B0C011DBF5BD500F3C78A /* UIBarButtonItem.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIBarButtonItem.swift; sourceTree = "<group>"; };
 		87A500851DC339EB0082044F /* MainAPI.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MainAPI.swift; sourceTree = "<group>"; };
+		87A5458D1DC843CA009AFD11 /* MainViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
 		8B2ED85DA1D9115FD7968360 /* Pods_xiaorizi_Gl.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_xiaorizi_Gl.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		ADA4C295A0929C7CAABDC44B /* Pods-xiaorizi-Gl.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-xiaorizi-Gl.debug.xcconfig"; path = "Pods/Target Support Files/Pods-xiaorizi-Gl/Pods-xiaorizi-Gl.debug.xcconfig"; sourceTree = "<group>"; };
 		C0AEE024B6EA86037710FAC8 /* Pods-xiaorizi-Gl.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-xiaorizi-Gl.release.xcconfig"; path = "Pods/Target Support Files/Pods-xiaorizi-Gl/Pods-xiaorizi-Gl.release.xcconfig"; sourceTree = "<group>"; };
@@ -94,7 +100,7 @@
 		872B0BF91DBF43E500F3C78A /* Controller */ = {
 			isa = PBXGroup;
 			children = (
-				872B0BFA1DBF43E500F3C78A /* MainViewController.swift */,
+				87A5458C1DC843CA009AFD11 /* Main */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -114,6 +120,17 @@
 				87A500851DC339EB0082044F /* MainAPI.swift */,
 			);
 			path = NetWorkInterFace;
+			sourceTree = "<group>";
+		};
+		87A5458C1DC843CA009AFD11 /* Main */ = {
+			isa = PBXGroup;
+			children = (
+				87A5458D1DC843CA009AFD11 /* MainViewController.swift */,
+				870A1DA41DC86D69007E25DD /* LifeListTableViewCell.swift */,
+				870A1DA81DC87CD5007E25DD /* LiftListModel.swift */,
+				870A1DAA1DC881D1007E25DD /* ItemModel.swift */,
+			);
+			path = Main;
 			sourceTree = "<group>";
 		};
 		A12160C7D811D707D6C566EA /* Frameworks */ = {
@@ -248,9 +265,12 @@
 			files = (
 				872B0C021DBF5BD500F3C78A /* UIBarButtonItem.swift in Sources */,
 				87265D221DBA36CE0024FFB2 /* AppDelegate.swift in Sources */,
+				870A1DAB1DC881D1007E25DD /* ItemModel.swift in Sources */,
+				870A1DA91DC87CD5007E25DD /* LiftListModel.swift in Sources */,
 				872B0BFE1DBF4BF600F3C78A /* PublicConfig.swift in Sources */,
 				87A500861DC339EC0082044F /* MainAPI.swift in Sources */,
-				872B0BFB1DBF43E500F3C78A /* MainViewController.swift in Sources */,
+				87A5458E1DC843CA009AFD11 /* MainViewController.swift in Sources */,
+				870A1DA51DC86D69007E25DD /* LifeListTableViewCell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
