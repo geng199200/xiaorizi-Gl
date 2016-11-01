@@ -11,12 +11,8 @@ import Kingfisher
 import SnapKit
 class LifeListTableViewCell: UITableViewCell {
 
-    var liftImageView: UIImageView {
-        let imageView = UIImageView()
-        imageView.contentMode = UIViewContentMode.scaleAspectFit
-        imageView.frame = CGRect.init(x: 0, y: 0, width: 50, height: 30)
-        return imageView
-    }
+    var liftImageView = UIImageView()
+    
 
     override func awakeFromNib() {
         super.awakeFromNib()
@@ -32,19 +28,23 @@ class LifeListTableViewCell: UITableViewCell {
     override init(style: UITableViewCellStyle, reuseIdentifier: String?) {
         super.init(style: style, reuseIdentifier: reuseIdentifier)
         setup()
+        self.selectionStyle = UITableViewCellSelectionStyle.default
     }
 
     func setup() {
         self.contentView.addSubview(liftImageView)
+        self.liftImageView.contentMode = UIViewContentMode.scaleAspectFill
+        self.liftImageView.clipsToBounds = true
+        self.liftImageView.snp.makeConstraints { (make) in
+            make.left.equalTo(self.contentView.snp.left).offset(10)
+            make.centerY.equalTo(self.contentView.snp.centerY)
+            make.size.equalTo(CGSize(width: 120, height: 80))
+        }
     }
 
     func setData(_ item: ItemModel)  {
         let url = URL(string: item.img!)!
-        liftImageView.kf.setImage(with: url,
-                              placeholder: nil,
-                              options: [.transition(.fade(1))],
-                              progressBlock: nil,
-                              completionHandler: nil)
+        liftImageView.kf.setImage(with: url)
     }
     
     required init?(coder aDecoder: NSCoder) {
