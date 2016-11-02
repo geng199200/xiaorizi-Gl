@@ -12,7 +12,20 @@ import SnapKit
 class LifeListTableViewCell: UITableViewCell {
 
     var liftImageView = UIImageView()
-    
+    let contentLabel: UILabel = {
+        let label = UILabel()
+        label.numberOfLines = 3
+        return label
+    }()
+    let tagsLabel: UILabel = {
+        let label = UILabel()
+        label.textColor = RGB(r: 166, g: 166, b: 166)
+        label.font = UIFont.systemFont(ofSize: 13)
+        return label
+    } ()
+
+
+
 
     override func awakeFromNib() {
         super.awakeFromNib()
@@ -38,13 +51,32 @@ class LifeListTableViewCell: UITableViewCell {
         self.liftImageView.snp.makeConstraints { (make) in
             make.left.equalTo(self.contentView.snp.left).offset(10)
             make.centerY.equalTo(self.contentView.snp.centerY)
-            make.size.equalTo(CGSize(width: 120, height: 80))
+            make.size.equalTo(CGSize(width: 130, height: 80))
+        }
+
+        self.contentView.addSubview(self.contentLabel)
+        self.contentLabel.snp.makeConstraints { (make) in
+            make.left.equalTo(self.liftImageView.snp.right).offset(10)
+            make.top.equalTo(self.liftImageView.snp.top)
+            make.right.equalTo(self.contentView.snp.right).offset(-20)
+        }
+
+        self.contentView.addSubview(self.tagsLabel)
+        self.tagsLabel.snp.makeConstraints { (make) in
+            make.left.equalTo(self.contentLabel.snp.left)
+            make.bottom.equalTo(self.liftImageView.snp.bottom).offset(-5)
         }
     }
 
     func setData(_ item: ItemModel)  {
         let url = URL(string: item.img!)!
         liftImageView.kf.setImage(with: url)
+        contentLabel.text = item.title!
+        var tages = "#"
+        tages = "\(tages) \(item.tags!)"
+        tages = tages.replacingOccurrences(of: ",", with: " # ")
+        tagsLabel.text = tages
+
     }
     
     required init?(coder aDecoder: NSCoder) {

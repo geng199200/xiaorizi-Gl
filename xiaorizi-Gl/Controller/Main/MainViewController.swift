@@ -35,7 +35,7 @@ class MainViewController: UIViewController, UITableViewDelegate, UITableViewData
         self.navigationController?.navigationBar.barTintColor = UIColor.black
         UIApplication.shared.statusBarStyle = .lightContent
          self.navigationItem.leftBarButtonItem = UIBarButtonItem.barButtonItemWithLeftIcon(icon: "near_2", "", self, #selector(MainViewController.leftAction))
-        self.navigationItem.rightBarButtonItems = UIBarButtonItem.barButtonItemWithRightIcons(icon: "ta_2", "", self, #selector(MainViewController.peopleAction), "zdsearch", "", self, #selector(MainViewController.searchAction))
+        self.navigationItem.rightBarButtonItems = UIBarButtonItem.barButtonItemWithRightIcons(icon: "ta_2", "", self, #selector(MainViewController.peopleAction), "search_1", "", self, #selector(MainViewController.searchAction))
     }
 
     //MARK: init view
@@ -68,6 +68,10 @@ class MainViewController: UIViewController, UITableViewDelegate, UITableViewData
         return 110
     }
 
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        tableView.deselectRow(at: indexPath, animated: false)
+    }
+
     //MARK: LoadDta
 
     func mainRequest() {
@@ -78,6 +82,7 @@ class MainViewController: UIViewController, UITableViewDelegate, UITableViewData
                     let json = try moyaResponse.mapJSON()
                    let result =  Mapper<LiftListModel>().map(JSON: json as! [String : Any])
                    self.repos = (result?.list)!
+                    print(json)
 
                 } catch  {
 
