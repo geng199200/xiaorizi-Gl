@@ -15,6 +15,7 @@
 		8726742F1DC9B87B001B403B /* LiftListModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8726742A1DC9B87B001B403B /* LiftListModel.swift */; };
 		872674301DC9B87B001B403B /* LifeListTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8726742C1DC9B87B001B403B /* LifeListTableViewCell.swift */; };
 		872674321DC9B8CE001B403B /* ListHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 872674311DC9B8CE001B403B /* ListHeaderView.swift */; };
+		872674341DC9DD83001B403B /* ListImageTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 872674331DC9DD83001B403B /* ListImageTableViewCell.swift */; };
 		872B0BFE1DBF4BF600F3C78A /* PublicConfig.swift in Sources */ = {isa = PBXBuildFile; fileRef = 872B0BFD1DBF4BF600F3C78A /* PublicConfig.swift */; };
 		872B0C021DBF5BD500F3C78A /* UIBarButtonItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 872B0C011DBF5BD500F3C78A /* UIBarButtonItem.swift */; };
 		87A500861DC339EC0082044F /* MainAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 87A500851DC339EB0082044F /* MainAPI.swift */; };
@@ -30,6 +31,7 @@
 		8726742A1DC9B87B001B403B /* LiftListModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LiftListModel.swift; sourceTree = "<group>"; };
 		8726742C1DC9B87B001B403B /* LifeListTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LifeListTableViewCell.swift; sourceTree = "<group>"; };
 		872674311DC9B8CE001B403B /* ListHeaderView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ListHeaderView.swift; sourceTree = "<group>"; };
+		872674331DC9DD83001B403B /* ListImageTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ListImageTableViewCell.swift; sourceTree = "<group>"; };
 		872B0BFD1DBF4BF600F3C78A /* PublicConfig.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PublicConfig.swift; sourceTree = "<group>"; };
 		872B0C011DBF5BD500F3C78A /* UIBarButtonItem.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIBarButtonItem.swift; sourceTree = "<group>"; };
 		87A500851DC339EB0082044F /* MainAPI.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MainAPI.swift; sourceTree = "<group>"; };
@@ -112,6 +114,7 @@
 			isa = PBXGroup;
 			children = (
 				8726742C1DC9B87B001B403B /* LifeListTableViewCell.swift */,
+				872674331DC9DD83001B403B /* ListImageTableViewCell.swift */,
 				872674311DC9B8CE001B403B /* ListHeaderView.swift */,
 			);
 			path = View;
@@ -293,6 +296,7 @@
 				8726742E1DC9B87B001B403B /* ItemModel.swift in Sources */,
 				872B0C021DBF5BD500F3C78A /* UIBarButtonItem.swift in Sources */,
 				872674321DC9B8CE001B403B /* ListHeaderView.swift in Sources */,
+				872674341DC9DD83001B403B /* ListImageTableViewCell.swift in Sources */,
 				8726742F1DC9B87B001B403B /* LiftListModel.swift in Sources */,
 				87265D221DBA36CE0024FFB2 /* AppDelegate.swift in Sources */,
 				872B0BFE1DBF4BF600F3C78A /* PublicConfig.swift in Sources */,

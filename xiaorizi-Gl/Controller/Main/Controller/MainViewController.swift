@@ -50,6 +50,7 @@ class MainViewController: UIViewController, UITableViewDelegate, UITableViewData
 
     func initSubviews() {
         self.tableView.register(LifeListTableViewCell.self, forCellReuseIdentifier: "Cell")
+        self.tableView.register(ListImageTableViewCell.self, forCellReuseIdentifier: "cell")
         self.view.addSubview(self.tableView)
         self.tableView.snp.makeConstraints { (make) in
             make.edges.equalTo(self.view).inset(UIEdgeInsetsMake(0, 0, 0, 0))
@@ -66,15 +67,26 @@ class MainViewController: UIViewController, UITableViewDelegate, UITableViewData
     }
 
      func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "Cell")! as! LifeListTableViewCell
-        cell.setData(self.repos[indexPath.row] as! ItemModel)
-        return cell
+
+        if indexPath.row == 3 {
+            let cell = tableView.dequeueReusableCell(withIdentifier: "cell")! as! ListImageTableViewCell
+            cell.setData(self.repos[indexPath.row] as! ItemModel)
+            return cell
+        } else {
+            let cell = tableView.dequeueReusableCell(withIdentifier: "Cell")! as! LifeListTableViewCell
+            cell.setData(self.repos[indexPath.row] as! ItemModel)
+            return cell
+        }
     }
 
     //MARK: UITableViewDelegate
 
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        return 110
+        if indexPath.row == 3 {
+            return 200
+        } else {
+            return 110
+        }
     }
 
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
@@ -89,6 +101,7 @@ class MainViewController: UIViewController, UITableViewDelegate, UITableViewData
             case let .success(moyaResponse):
                 do {
                    let json = try moyaResponse.mapJSON()
+                    print(json)
                    let resultModel =  Mapper<LiftListModel>().map(JSON: json as! [String : Any])
                    self.repos = (resultModel?.list)!
                     self.headerView.setDats((resultModel?.dayDic)!)
