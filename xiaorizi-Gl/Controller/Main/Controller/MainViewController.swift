@@ -14,12 +14,20 @@ import ObjectMapper
 class MainViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
      var repos = [Any]()
     lazy var tableView = UITableView()
+    let headerView: ListHeaderView = {
+        let headerView = ListHeaderView()
+        headerView.frame = CGRect.init(x: 0, y: 0, width:screenWidth , height: 66)
+        return headerView
+    } ()
+
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        setupMainView()
-        initSubviews()
-        mainRequest()
+        self.setupMainView()
+        self.initSubviews()
+        DispatchQueue.global().async {
+            self.mainRequest()
+        }
     }
 
     override func didReceiveMemoryWarning() {
@@ -48,6 +56,7 @@ class MainViewController: UIViewController, UITableViewDelegate, UITableViewData
         }
         self.tableView.delegate = self
         self.tableView.dataSource = self
+        self.tableView.separatorColor = UIColor.clear
     }
 
     //MARK: UITableViewDataSource
@@ -79,14 +88,16 @@ class MainViewController: UIViewController, UITableViewDelegate, UITableViewData
             switch result {
             case let .success(moyaResponse):
                 do {
-                    let json = try moyaResponse.mapJSON()
-                   let result =  Mapper<LiftListModel>().map(JSON: json as! [String : Any])
-                   self.repos = (result?.list)!
-                    print(json)
+                   let json = try moyaResponse.mapJSON()
+                   let resultModel =  Mapper<LiftListModel>().map(JSON: json as! [String : Any])
+                   self.repos = (resultModel?.list)!
+                    self.headerView.setDats((resultModel?.dayDic)!)
+                    self.tableView.tableHeaderView = self.headerView
 
                 } catch  {
 
                 }
+                print(onePointLine)
                 self.tableView.reloadData()
 
             case let .failure(error):

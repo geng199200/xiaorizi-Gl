@@ -20,6 +20,7 @@ let version = Bundle.main.infoDictionary!["CFBundleShortVersionString"] as! Stri
 public let screenBounds = UIScreen.main.bounds
 public let screenHeight = UIScreen.main.bounds.height
 public let screenWidth = UIScreen.main.bounds.width
+public let onePointLine = ((1 / UIScreen.main.scale)/2)
 
 func RGB(r:CGFloat,g:CGFloat,b:CGFloat)->UIColor{
 

@@ -24,6 +24,12 @@ class LifeListTableViewCell: UITableViewCell {
         return label
     } ()
 
+    let line: UIView = {
+        let view = UIView()
+        view.backgroundColor = RGB(r: 220, g: 220, b: 223)
+        return view
+    }()
+
 
 
 
@@ -65,6 +71,14 @@ class LifeListTableViewCell: UITableViewCell {
         self.tagsLabel.snp.makeConstraints { (make) in
             make.left.equalTo(self.contentLabel.snp.left)
             make.bottom.equalTo(self.liftImageView.snp.bottom).offset(-5)
+        }
+
+        self.addSubview(self.line)
+        self.line.snp.makeConstraints { (make) in
+            make.left.equalTo(self.snp.left).offset(10)
+            make.right.equalTo(self.snp.right).offset(-10)
+            make.bottom.equalTo(self.snp.bottom).offset(-1)
+            make.height.equalTo(1)
         }
     }
 
