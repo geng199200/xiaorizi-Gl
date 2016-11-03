@@ -11,7 +11,7 @@ import SwiftyJSON
 import SnapKit
 import ObjectMapper
 
-class MainViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
+class MainViewController: UIViewController, UITableViewDelegate, UITableViewDataSource, LifeTagsTableViewCellDelegate {
     var resultModel: LiftListModel!
      var repos = [Any]()
     lazy var tableView = UITableView()
@@ -76,6 +76,7 @@ class MainViewController: UIViewController, UITableViewDelegate, UITableViewData
             return cell
         } else if indexPath.row == 8{
             let cell = tableView.dequeueReusableCell(withIdentifier: "Tags")! as! LifeTagsTableViewCell
+            cell.delegate = self
             cell.setItemData(self.resultModel.tagArray!)
             return cell
         } else if indexPath.row > 8 && 0 == (indexPath.row - 8) % 5 {
@@ -106,6 +107,12 @@ class MainViewController: UIViewController, UITableViewDelegate, UITableViewData
 
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         tableView.deselectRow(at: indexPath, animated: false)
+    }
+
+    //MARK: delegate
+
+    internal  func didTags(_ id: Int) {
+        print(id)
     }
 
     //MARK: LoadDta

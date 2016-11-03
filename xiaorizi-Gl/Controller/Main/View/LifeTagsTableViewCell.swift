@@ -10,11 +10,16 @@
 import UIKit
 import SnapKit
 
+protocol LifeTagsTableViewCellDelegate: class {
+    func didTags(_ id: Int)
+}
+
 class LifeTagsTableViewCell: UITableViewCell, LifeTagsViewDelegate {
     internal func touchItem(_ id: Int) {
-        print(id)
+       self.delegate?.didTags(id)
     }
 
+    weak var delegate: LifeTagsTableViewCellDelegate?
 
     var tagsView = LifeTagsView()
 
