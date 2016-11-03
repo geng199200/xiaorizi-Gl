@@ -12,6 +12,8 @@ import ObjectMapper
 class LiftListModel: NSObject, Mappable  {
     var dayDic: [String : Any] = [:]
     var list: [ItemModel]?
+    var tagArray: [Any]?
+
 
     required init?(map: Map) {
 
@@ -19,6 +21,7 @@ class LiftListModel: NSObject, Mappable  {
     func mapping(map: Map) {
         dayDic <- map["day"]
         list <- map["list"]
+        tagArray <- map["tags"]
     }
 
 }

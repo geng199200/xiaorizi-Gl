@@ -18,6 +18,8 @@
 		872674341DC9DD83001B403B /* ListImageTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 872674331DC9DD83001B403B /* ListImageTableViewCell.swift */; };
 		872B0BFE1DBF4BF600F3C78A /* PublicConfig.swift in Sources */ = {isa = PBXBuildFile; fileRef = 872B0BFD1DBF4BF600F3C78A /* PublicConfig.swift */; };
 		872B0C021DBF5BD500F3C78A /* UIBarButtonItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 872B0C011DBF5BD500F3C78A /* UIBarButtonItem.swift */; };
+		87548A661DCADE2700B70FC2 /* LifeTagsTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 87548A651DCADE2700B70FC2 /* LifeTagsTableViewCell.swift */; };
+		87548A681DCB055C00B70FC2 /* LifeTagsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 87548A671DCB055C00B70FC2 /* LifeTagsView.swift */; };
 		87A500861DC339EC0082044F /* MainAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 87A500851DC339EB0082044F /* MainAPI.swift */; };
 /* End PBXBuildFile section */
 
@@ -34,6 +36,8 @@
 		872674331DC9DD83001B403B /* ListImageTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ListImageTableViewCell.swift; sourceTree = "<group>"; };
 		872B0BFD1DBF4BF600F3C78A /* PublicConfig.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PublicConfig.swift; sourceTree = "<group>"; };
 		872B0C011DBF5BD500F3C78A /* UIBarButtonItem.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIBarButtonItem.swift; sourceTree = "<group>"; };
+		87548A651DCADE2700B70FC2 /* LifeTagsTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LifeTagsTableViewCell.swift; sourceTree = "<group>"; };
+		87548A671DCB055C00B70FC2 /* LifeTagsView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LifeTagsView.swift; sourceTree = "<group>"; };
 		87A500851DC339EB0082044F /* MainAPI.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MainAPI.swift; sourceTree = "<group>"; };
 		8B2ED85DA1D9115FD7968360 /* Pods_xiaorizi_Gl.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_xiaorizi_Gl.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		ADA4C295A0929C7CAABDC44B /* Pods-xiaorizi-Gl.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-xiaorizi-Gl.debug.xcconfig"; path = "Pods/Target Support Files/Pods-xiaorizi-Gl/Pods-xiaorizi-Gl.debug.xcconfig"; sourceTree = "<group>"; };
@@ -115,7 +119,9 @@
 			children = (
 				8726742C1DC9B87B001B403B /* LifeListTableViewCell.swift */,
 				872674331DC9DD83001B403B /* ListImageTableViewCell.swift */,
+				87548A651DCADE2700B70FC2 /* LifeTagsTableViewCell.swift */,
 				872674311DC9B8CE001B403B /* ListHeaderView.swift */,
+				87548A671DCB055C00B70FC2 /* LifeTagsView.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -293,12 +299,14 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				87548A661DCADE2700B70FC2 /* LifeTagsTableViewCell.swift in Sources */,
 				8726742E1DC9B87B001B403B /* ItemModel.swift in Sources */,
 				872B0C021DBF5BD500F3C78A /* UIBarButtonItem.swift in Sources */,
 				872674321DC9B8CE001B403B /* ListHeaderView.swift in Sources */,
 				872674341DC9DD83001B403B /* ListImageTableViewCell.swift in Sources */,
 				8726742F1DC9B87B001B403B /* LiftListModel.swift in Sources */,
 				87265D221DBA36CE0024FFB2 /* AppDelegate.swift in Sources */,
+				87548A681DCB055C00B70FC2 /* LifeTagsView.swift in Sources */,
 				872B0BFE1DBF4BF600F3C78A /* PublicConfig.swift in Sources */,
 				872674301DC9B87B001B403B /* LifeListTableViewCell.swift in Sources */,
 				87A500861DC339EC0082044F /* MainAPI.swift in Sources */,
