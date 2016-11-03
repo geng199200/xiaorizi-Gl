@@ -9,9 +9,18 @@
 import UIKit
 import SnapKit
 
+protocol LifeTagsViewDelegate: class {
+    func touchItem(_ id: Int)
+}
+
+
 class LifeTagsView: UIView {
 
+    weak var delegate: LifeTagsViewDelegate?
+
     var btnArray = [UIButton]()
+    var dataArray = [Any]()
+
 
     init() {
         super.init(frame: CGRect.init(x: 0, y: 0, width: 0, height: 0))
@@ -45,10 +54,13 @@ class LifeTagsView: UIView {
     }
 
     func tagsAction(_ sender: UIButton) {
-
+        let  dic = self.dataArray[sender.tag] as! NSDictionary
+        self.delegate?.touchItem(dic["id"] as! Int)
+       
     }
 
     public func setDatas(_ data:Array<Any>) {
+        self.dataArray = data
         for (index, obj) in self.btnArray.enumerated() {
             let btn = obj 
             let dic = data[index] as! NSDictionary

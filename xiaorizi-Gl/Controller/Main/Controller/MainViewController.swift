@@ -78,6 +78,10 @@ class MainViewController: UIViewController, UITableViewDelegate, UITableViewData
             let cell = tableView.dequeueReusableCell(withIdentifier: "Tags")! as! LifeTagsTableViewCell
             cell.setItemData(self.resultModel.tagArray!)
             return cell
+        } else if indexPath.row > 8 && 0 == (indexPath.row - 8) % 5 {
+            let cell = tableView.dequeueReusableCell(withIdentifier: "cell")! as! ListImageTableViewCell
+            cell.setData(self.repos[indexPath.row] as! ItemModel)
+            return cell
         } else {
             let cell = tableView.dequeueReusableCell(withIdentifier: "Cell")! as! LifeListTableViewCell
             cell.setData(self.repos[indexPath.row] as! ItemModel)
@@ -92,6 +96,8 @@ class MainViewController: UIViewController, UITableViewDelegate, UITableViewData
             return 200
         } else if indexPath.row == 8 {
             return 150
+        } else if indexPath.row > 8 && 0 == (indexPath.row - 8) % 5{
+            return 200
         } else {
             return 110
         }

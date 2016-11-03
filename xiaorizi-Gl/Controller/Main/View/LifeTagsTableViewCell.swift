@@ -10,7 +10,11 @@
 import UIKit
 import SnapKit
 
-class LifeTagsTableViewCell: UITableViewCell {
+class LifeTagsTableViewCell: UITableViewCell, LifeTagsViewDelegate {
+    internal func touchItem(_ id: Int) {
+        print(id)
+    }
+
 
     var tagsView = LifeTagsView()
 
@@ -35,8 +39,9 @@ class LifeTagsTableViewCell: UITableViewCell {
     }
 
     func setup()  {
-       self.contentView.backgroundColor = RGB(r: 249, g: 249, b: 249)
+        self.contentView.backgroundColor = RGB(r: 249, g: 249, b: 249)
         self.contentView.addSubview(self.tagsView)
+        self.tagsView.delegate = self
         self.tagsView.snp.makeConstraints { (make) in
             make.left.equalTo(self.contentView.snp.left).offset(10)
             make.top.equalTo(self.contentView.snp.top).offset(15)
