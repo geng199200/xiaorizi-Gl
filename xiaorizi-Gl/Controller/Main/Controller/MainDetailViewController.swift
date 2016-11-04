@@ -10,7 +10,7 @@ import UIKit
 import WebKit
 import SnapKit
 
-class MainDetailViewController: UIViewController {
+class MainDetailViewController: UIViewController, WKNavigationDelegate {
     public var itemModel: ItemModel?
     var wkWebView: WKWebView!
     let progress: UIProgressView = {
@@ -38,6 +38,12 @@ class MainDetailViewController: UIViewController {
         // Dispose of any resources that can be recreated.
     }
 
+    //MARK: WKNavigationDelegate
+
+    func webView(_ webView: WKWebView, didFinish navigation: WKNavigation!) {
+        self.title = wkWebView.title
+    }
+
     //MARK: KVO
 
     override func observeValue(forKeyPath keyPath: String?, of object: Any?, change: [NSKeyValueChangeKey : Any]?, context: UnsafeMutableRawPointer?) {
@@ -52,12 +58,18 @@ class MainDetailViewController: UIViewController {
                 })
             }
         }
+
     }
 
     //MARK: Private Method
 
     func setup() {
         self.view.backgroundColor = UIColor.white
+        let leftBtn = UIButton.init(type: .custom)
+        leftBtn.setImage(UIImage.init(named: "back_3"), for: .normal)
+        leftBtn.frame = CGRect.init(x: 0, y: 0, width: 44, height: 44)
+        leftBtn.addTarget(self, action: #selector(back), for: .touchUpInside)
+        self.navigationItem.leftBarButtonItem = UIBarButtonItem.init(customView: leftBtn)
     }
 
     func configWebView(){
@@ -80,7 +92,14 @@ class MainDetailViewController: UIViewController {
 
         let url = URL.init(string: (self.itemModel?.url)!)
         let request = URLRequest.init(url: url!)
+        self.wkWebView.navigationDelegate = self
         self.wkWebView.load(request)
 
+    }
+
+    //MARK: Button Event
+
+    func back(_ sender: UIButton) {
+        self.navigationController?.popViewController(animated: true)
     }
 }
